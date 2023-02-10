@@ -1,8 +1,8 @@
 ## Difference between git push, git pull, and git fetch
 
-`git fetch` tells your local branch that there are changes in the remote repository without bringing the changes into your local branch.  Tracking branches are local branches that have a direct relationship to a remote branch. `git fetch` updates remote tracking branches.
+`git fetch` tells your local branch that there are changes in the remote repository without bringing the changes into your local branch. Tracking branches are local branches that have a direct relationship to a remote branch. `git fetch` checks your current branch for tracking branches and if there are tracking branches, it updates them with changes from the remote repository. It does not change your local branch.
 
-`git pull` brings changes to your local branch from the remote repository. Use `git pull` to fetch and download changes from the remote repository and update your local repository with the changes. `git pull` first executes `git fetch` and then `git merge` under the hood.
+`git pull` brings changes to your local branch from the remote repository. Use `git pull` to fetch and download changes from the remote repository and update your local repository with the changes. `git pull` first executes `git fetch` and then `git merge` under the hood. To see the changes that you are merging into your branch, run `git fetch` followed by `git merge`.
 
 `git push` sends changes from your local branch to the remote repository. It checks whether there is a tracking branch for a remote repository in your current branch. If there is a tracking branch, it sends the changes from your tracking branch to the remote branch. This is how it shares code with the remote repository - it makes the remote branch resemble your local branch. 
 `git push` fails if your remote branch has diverged from your local branch - if all commits in the remote branch are not in your local branch. When this happens, synchronize your local branch with the remote branch with `git pull` or `git fetch` and `git merge`.
